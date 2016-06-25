@@ -1,0 +1,25 @@
+__author__= 'ling'
+import string,random
+
+#第 0001 题：**做为 Apple Store App 独立开发者，你要搞限时促销，
+#为你的应用**生成激活码**（或者优惠券），使用 Python 如何生成 200 个激活码（或者优惠券）？
+
+class Key_generate(object):
+    def key_initialize(self,key_length,key_num):
+        result = []
+        chars = string.digits + string.ascii_letters
+        while key_num > 0:
+            str = ""
+            for i in range(key_length):
+                str = str + random.choice(chars)
+            if str not in result:
+                result.append(str)
+                key_num -= 1
+        print(result)
+        return result
+
+if __name__=="__main__":
+    KEY_NUM = 20
+    KEY_LEN = 12
+    obj_key_generate = Key_generate()
+    obj_key_generate.key_initialize(KEY_LEN,KEY_NUM)
