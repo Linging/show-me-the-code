@@ -44,3 +44,4 @@ if __name__=="__main__":
     obj_txt = Xls_writer()
     if obj_txt.define_types(content) == 'json':
         obj_txt.generate_xls(obj_txt.json_type(content))
+    fp.close()
